@@ -1,5 +1,6 @@
 
-/*function consultaCep(){
+function consultaCep(){
+    $(".barra-progresso").show();
     var cep = document.getElementById("cep").value;
     var url = "https://viacep.com.br/ws/" + cep + "/json/";
     console.log(url);
@@ -10,18 +11,27 @@
         success: function(response){
             console.log(response);
             $("#logradouro").html(response.logradouro);
-            document.getElementById("logradouro").innerHTML = response.logradouro;
+            //document.getElementById("logradouro").innerHTML = response.logradouro;
             $("#bairro").html(response.bairro);
-            document.getElementById("bairro").innerHTML = response.bairro;
+            //document.getElementById("bairro").innerHTML = response.bairro;
             $("#localidade").html(response.localidade);
-            document.getElementById("localidade").innerHTML = response.localidade;
-            $("uf").html(response.uf);
-            document.getElementById("uf").innerHTML = response.uf;
+            //document.getElementById("localidade").innerHTML = response.localidade;
+            $("#uf").html(response.uf);
+            //document.getElementById("uf").innerHTML = response.uf;
+            $("#tituloCep").html("CEP - " + response.cep);
+            $(".cep").show();
+            $(".barra-progresso").hide();
         }
     })
-}*/
+}
 
-$(document).ready(function() {
+$(function(){
+    $(".cep").hide();
+    $(".barra-progresso").hide();
+});
+
+
+/*$(document).ready(function() {
 
     function limpa_formulário_cep() {
         // Limpa valores do formulário de cep.
@@ -83,4 +93,4 @@ $(document).ready(function() {
             limpa_formulário_cep();
         }
     });
-});
+});*/
